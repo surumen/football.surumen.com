@@ -1,95 +1,45 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+'use client';
+// import node module libraries
+
+// Styles
+import '@/style/_index.scss'
+
+import { NavbarTop, Header } from '@/app/components';
+import { Club } from '@/app/components/navbars/Header';
+
+export interface League {
+    name: string;
+    slug: string;
+    logo?: string;
+}
 
 export default function Home() {
-  return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+
+    const leagues: League[] = [
+        {name: 'Premier League', slug: 'premier-league', logo: 'https://www.premierleague.com/resources/rebrand/v7.131.3/i/elements/pl-main-logo.png'},
+        {name: 'UEFA Champions League', slug: 'uefa-champions-league', logo: ''},
+        {name: 'UEFA Europa League', slug: 'uefa-europa-league', logo: ''},
+        {name: 'LaLiga', slug: 'la-liga', logo: ''},
+        {name: 'Bundesliga', slug: 'bundesliga', logo: ''},
+        {name: 'Ligue1', slug: 'ligue-1', logo: ''},
+        {name: 'Serie A', slug: 'serie-a', logo: ''}
+    ]
+
+    const clubs: Club[] = [
+        {name: 'Manchester United', logo: 'https://resources.premierleague.com/premierleague/badges/rb/t1.png', slug: 'manchester-united'},
+        {name: 'Arsenal', logo: 'https://resources.premierleague.com/premierleague/badges/rb/t3.svg', slug: 'arsenal'},
+        {name: 'Liverpool', logo: 'https://resources.premierleague.com/premierleague/badges/rb/t14.svg', slug: 'liverpool'},
+        {name: 'Chelsea', logo: 'https://resources.premierleague.com/premierleague/badges/rb/t8.svg', slug: 'chelsea'},
+        {name: 'Manchester City', logo: 'https://resources.premierleague.com/premierleague/badges/rb/t43.svg', slug: 'manchester-city'},
+        {name: 'Tottenham Hotspurs', logo: 'https://resources.premierleague.com/premierleague/badges/rb/t6.svg', slug: 'tottenham'},
+    ]
+
+    return (
+        <div className='d-flex flex-column flex-lg-row h-lg-100 gap-1'>
+            <div className='flex-lg-fill overflow-x-auto ps-lg-1 vstack vh-lg-100 position-relative'>
+                <NavbarTop leagues={leagues}/>
+                <Header clubs={clubs} league={leagues[0]}/>
+            </div>
         </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+    )
 }
