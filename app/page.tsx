@@ -5,13 +5,8 @@
 import '@/style/_index.scss'
 
 import { NavbarTop, Header } from '@/app/components';
-import { Club } from '@/app/components/navbars/Header';
+import { Club, League } from '@/app/models';
 
-export interface League {
-    name: string;
-    slug: string;
-    logo?: string;
-}
 
 export default function Home() {
 

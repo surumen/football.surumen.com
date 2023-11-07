@@ -1,19 +1,21 @@
 // import node module libraries
-import React, { Fragment, useState } from 'react';
+import React from 'react';
 import { Col, Row, Image, Container } from 'react-bootstrap';
 
 // import bootstrap icons
 import { ThreeDotsVertical } from 'react-bootstrap-icons';
 
-export interface Club {
-    name: string;
-    slug: string;
-    logo: string;
+// import models
+import { Club, League } from '@/app/models';
+
+
+// Define component props
+type HeaderProps = {
+    clubs: Club[];
+    league: League;
 }
 
-export function Header(props: any) {
-    const [clubs, setClubs] = useState(props.clubs);
-    const [league, setLeague] = useState(props.league);
+const Header: React.FC<HeaderProps> = ({ clubs, league }) => {
     return (
         <div className='flex-fill overflow-y-lg-auto scrollbar bg-body'>
             <Container fluid={true} className='py-3 border-bottom'>
@@ -41,3 +43,5 @@ export function Header(props: any) {
         </div>
     );
 }
+
+export default Header;

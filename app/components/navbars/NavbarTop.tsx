@@ -1,11 +1,16 @@
 // import node module libraries
-import React, { Fragment, useState } from 'react';
+import React from 'react';
 import Link from 'next/link';
-import {League} from '@/app/page';
 
+// import models
+import { League } from '@/app/models';
 
-export function NavbarTop(props: any) {
-    const [leagues, setLeagues] = useState(props.leagues);
+// Define component props
+type NavbarTopProps = {
+    leagues: League[];
+}
+
+const NavbarTop: React.FC<NavbarTopProps> = ({ leagues }) => {
     return (
         <div
             className='border-bottom d-flex py-4'>
@@ -22,3 +27,5 @@ export function NavbarTop(props: any) {
         </div>
     );
 }
+
+export default NavbarTop;
