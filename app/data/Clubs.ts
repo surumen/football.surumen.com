@@ -1,4 +1,6 @@
-export const ClubsData = [
+import { Club } from '@/app/models';
+
+export const PremierLeagueClubs = [
     {
         name: 'Arsenal',
         code: 'ARS',
@@ -101,4 +103,11 @@ export const ClubsData = [
     },
 ];
 
-export default ClubsData;
+export const PremierLeagueTop6: Club[] = [
+    {name: 'Manchester United', logo: 'https://resources.premierleague.com/premierleague/badges/rb/t1.png', slug: 'manchester-united'},
+    {name: 'Arsenal', logo: 'https://resources.premierleague.com/premierleague/badges/rb/t3.svg', slug: 'arsenal'},
+    {name: 'Liverpool', logo: 'https://resources.premierleague.com/premierleague/badges/rb/t14.svg', slug: 'liverpool'},
+    {name: 'Chelsea', logo: 'https://resources.premierleague.com/premierleague/badges/rb/t8.svg', slug: 'chelsea'},
+    {name: 'Manchester City', logo: 'https://resources.premierleague.com/premierleague/badges/rb/t43.svg', slug: 'manchester-city'},
+    {name: 'Tottenham Hotspurs', logo: 'https://resources.premierleague.com/premierleague/badges/rb/t6.svg', slug: 'tottenham'},
+];
