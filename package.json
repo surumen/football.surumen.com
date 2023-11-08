@@ -9,7 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@meinefinsternis/react-horizontal-date-picker": "^1.0.1",
     "bootstrap": "^5.3.2",
+    "date-fns": "^2.30.0",
     "next": "14.0.1",
     "next-seo": "^6.4.0",
     "react": "^18",
